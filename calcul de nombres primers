@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="author" content="Natalia Garcias">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+    <title>Números primos</title>
+
+    <script src="primos.js"></script> <!-- Este script carga la función para los números primos -->
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <script>
+
+            /* El usuario introduce un valor */
+
+            valor = prompt("¿Hasta que numero quieres ver los números primos?"); 
+
+            /* Control de errores del valor introducido */
+
+            try {
+
+                if(valor==null || valor=="") throw "¡El campo está vacio!";
+
+	            if(isNaN(valor)) throw "¡No es un número!";
+
+                x = Number(x);
+
+	            if(valor < 1) throw "¡El número es demasiado pequeño!";
+
+                } catch(err) {
+
+	            window.alert(err);
+
+                } 
+
+            /* Se transforma el valor a un número entero */
+
+            valor = parseInt(valor);
+
+            /* Inicio del IF para escribir los números primos en una tabla con el estilo de Bootstrap */
+
+            if(valor>=1 && !isNaN(valor)){
+
+                document.write("<h1> Los números primos </h1>");
+
+                document.write("<table class= 'table table-hover'>");
+
+                    for (var x =1; x<=valor; x++){
+
+                        if(esPrimo(x)){
+
+                            document.write("<tr><td>"+ x +"</td></tr>");
+
+                        }
+
+                    }
+
+                    document.write("</table>");
+
+            }
+
+            /* Fin del script */
+
+        </script>
+
+    </div>
+
+</body>
